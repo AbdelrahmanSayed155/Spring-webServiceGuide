@@ -1,0 +1,52 @@
+Web Sevice is Soft ware System design for support communication between machines , interact over network , deliverd over network
+so we have one services and other channel can talk with it 
+and design for application can talk other application , server can talk other server
+it plat for independent 
+
+if web service have independent request and response it becam independent 
+ as format data xml , json 
+ 
+key termenology for web service 
+1 - request and response (input and output of service )
+2 - data exchange between provider (xml ,json)
+3 - service provider  produser is server 
+4 - service consume or client 
+5 - sevice definition is contract between server and client  as (request response format  , request structure , response structure ,  end point )
+6 - transport http and MQ
+
+ web services type 
+ ----------------- rest 
+ is architectue 
+ stands for representation state transfer 
+  http (hyper text transfer protocol)is protocol for exchange daya through network 
+  this protocol manage transfering data through it and structure of request and response 
+  so requset have structure in http 
+  as http methods (Get or post or delete )
+    http status 
+   http resouses
+   uri (Uniform resourses identifier) as /we/lol/go
+   resourses type :
+   xml , html , json 
+    a REST application can use any protocol for which there is a standardized URI scheme.
+-----------------Soap WB servic 
+ is restriction xml format between provider and client 
+ soap is stand for simple object access protocol
+  soap use xml format as exchange request and response 
+       soap envelop :-
+	   1-soap have header which contain :  authentication ,authories 
+	   2- soap body 
+    transport 
+     over network ,  over MQ 
+    definition wsdl
+
+	WSDL :  have ( endpoint , alloperation , request structure  , response structure )
+	wsdl : web sevice definintion language 
+	
+	
+	
+	
+	
+	
+	
+	
+	
