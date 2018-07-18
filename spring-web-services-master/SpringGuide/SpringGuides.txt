@@ -1,0 +1,57 @@
+
+context pick up beans wich packge  context build from it 
+ spring is not big framework becuase it moduls and you use anu module you want to use so it lightwight
+di make test code is very easy and mock it is very easy 
+- to deploy any java web in linux frist install java then web app as websfer , tomcat or web logic 
+but in boot we have embeded server so we don't need to install web app 
+spring boot have production feature as monitor from spring boot acuator 
+spring boot support diff profile for run in diffrent environment 
+so you can make profile run in localDevice and in production or other devices 
+
+
+@SpringBootApplication that mean  annotation is equivalent to using  @Configuration, @EnableAutoConfiguration and @ComponentScan
+it scan package and sub package of class with have this annotation 
+
+so auotoconfigration how happen ?
+
+when  jar found at classpath as spring web autoconfigration goto it configrate it 
+so autocinfigration jar is loop to classes in class path if it found it configre that 
+
+
+so without autocinfugration we need write than 
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+        destroy-method="close">
+        <property name="driverClass" value="${db.driver}" />
+        <property name="jdbcUrl" value="${db.url}" />
+        <property name="user" value="${db.username}" />
+        <property name="password" value="${db.password}" />
+    </bean>
+    <jdbc:initialize-database data-source="dataSource">
+        <jdbc:script location="classpath:config/schema.sql" />
+        <jdbc:script location="classpath:config/data.sql" />
+    </jdbc:initialize-database>
+    <bean
+        class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+        id="entityManagerFactory">
+        <property name="persistenceUnitName" value="hsql_pu" />
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+	
+	
+	spring core make test is easy  and add ioc , di , 
+	
+	
+	
+	
+	-- spring acuator is monitor your application 
+	and set dependency for view this monotor in browser 
+	
+	--- for aotostart when change code you must set devTool in pom file 
+	
+
+
